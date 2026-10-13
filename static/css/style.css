@@ -1,0 +1,241 @@
+/* ===== New Earth homepage ===== */
+
+:root {
+    --cream: #f6fbd6;          /* pale yellow-green used for headings + buttons */
+    --off-white: #fdf8f2;      /* goal section background */
+    --forest: #3c4a3c;         /* "Our Goal:" heading */
+    --brown: #5b5040;          /* goal body text */
+    --gold: #b08d57;           /* goal quote */
+    --black: #000;
+
+    --serif-display: "Instrument Serif", Georgia, serif;
+    --serif-classic: "Playfair Display", Georgia, serif;
+    --serif-quote: "Libre Baskerville", Georgia, serif;
+    --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--sans);
+    background: var(--black);
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 999px;
+    padding: 0.9rem 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn--cream { background: var(--cream); color: #000; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+
+/* ---------- Hero ---------- */
+.hero {
+    min-height: 100vh;
+    /* Drop your hero photo in static/img/hero.jpg; the gradient shows until then */
+    background:
+        linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)),
+        url("../img/hero.jpg") center / cover no-repeat,
+        linear-gradient(180deg, #2b3e5c 0%, #8a5a3a 40%, #1f5a55 70%, #0f2b24 100%);
+    display: flex;
+    align-items: center;
+}
+
+.hero__inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 3.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero__title {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    color: var(--cream);
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+    margin-top: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: #fff;
+}
+
+.hero__btn {
+    margin-top: 10rem;
+    margin-left: 2.5rem;
+    width: min(310px, 100%);
+}
+
+.hero__quote {
+    font-family: var(--serif-quote);
+    font-size: clamp(1.4rem, 2.3vw, 1.9rem);
+    color: #fff;
+    text-align: center;
+    max-width: 290px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+/* ---------- Our Goal ---------- */
+.goal {
+    background: var(--off-white);
+    color: var(--brown);
+    padding-top: 6rem;
+}
+
+.goal__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 7%;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.goal__title {
+    font-family: var(--serif-classic);
+    font-weight: 400;
+    color: var(--forest);
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+}
+
+.goal__text {
+    font-weight: 600;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.3;
+}
+
+.goal__quote {
+    max-width: 1400px;
+    margin: 7rem auto 6rem;
+    padding: 0 7%;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr 0.85fr;
+    gap: 4px;
+    height: clamp(180px, 22vw, 320px);
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #cfd8c4;
+}
+
+/* ---------- What are we doing ---------- */
+.doing {
+    background: var(--black);
+    padding: 6rem 0 0;
+    overflow: hidden;
+}
+
+.doing__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.doing__left {
+    display: flex;
+    flex-direction: column;
+}
+
+.doing__title {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    color: var(--cream);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 8ch;
+}
+
+.doing__plane {
+    width: min(300px, 80%);
+    margin-top: auto;
+    margin-left: 18%;
+}
+
+.doing__right {
+    padding-bottom: 5rem;
+}
+
+.doing__item { margin-bottom: 2.2rem; max-width: 440px; }
+
+.doing__item h3 {
+    font-family: var(--sans);
+    font-weight: 700;
+    color: var(--cream);
+    font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+    margin-bottom: 0.8rem;
+}
+
+.doing__item p {
+    color: var(--cream);
+    font-size: 1.05rem;
+    line-height: 1.3;
+}
+
+.doing__btn {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    width: min(310px, 100%);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+    .hero__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3rem 1.25rem;
+    }
+    .hero__btn { margin: 3rem 0 0; }
+    .hero__quote { text-align: left; max-width: none; }
+
+    .goal { padding-top: 4rem; }
+    .goal__inner,
+    .doing__inner {
+        grid-template-columns: 1fr;
+        padding: 0 1.25rem;
+    }
+    .goal__quote { margin: 3.5rem auto; padding: 0 1.25rem; }
+    .gallery { grid-template-columns: 1fr 1fr; height: auto; }
+    .gallery__img { aspect-ratio: 4 / 3; }
+    .gallery__img--wide { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
+
+    .doing { padding-top: 4rem; }
+    .doing__plane { display: none; }
+    .doing__btn { margin-left: 0; }
+}
